@@ -32,6 +32,8 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+# 환경 변수 중 .env.example 제외(허용)
+!.env.example
 
 # vercel
 .vercel
@@ -39,3 +41,17 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.git
+.gitignore
+
+# 빌드 산출물
+.next
+
+README.md
+*.md
+
+# 개발 전용 설정 파일
+.eslintrc*
+.prettierrc*
+jest.config.*
