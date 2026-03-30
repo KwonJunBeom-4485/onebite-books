@@ -31,6 +31,16 @@ const nextConfig: NextConfig = {
     ],
   },
 
+  // PPR 활성화 설정 추가
+  experimental: {
+    // 'incremental' : 접체 앱이 아닌 특정 라우트에서만 선택적으로 PPR 사용.
+    // 각 page.tsx에서 export const experimental_ppr = true로 개별 활성화
+    // true로 설정하면 PPR 적용.
+    // ppr: true 이면 앱 전체 적용. 모든 Suspense는 동적 구멍(dynamic hole)로 처리 됨.
+    // ppr: 'incremental',
+    // cacheComponents: true,
+  }
+
 
 };
 

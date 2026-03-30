@@ -1,3 +1,5 @@
+// 이 페이지는 middleware.ts가 admin-token 쿠키를 확인한 후에만, 접근을 허용. 
+// 쿠키 없으면 /로 리다이렉트 됩니다. 
 import { cookies } from 'next/headers';
 import Link from 'next/link';
 
@@ -16,7 +18,7 @@ export default async function AdminPage() {
   const cookieStore = await cookies();
   const adminToken = cookieStore.get('admin-token');
 
-  // 쿠키가 없으면 서버 측에서도 접근 차단 (이중 보호)
+  // 쿠키가 없으면 서버 측에서도 접근 차단 (이중 보호)******
   // 실제 서비스에서는 토큰 유효성(만료, 서명 등)도 검증해야 합니다.
   if (!adminToken) {
     return (
