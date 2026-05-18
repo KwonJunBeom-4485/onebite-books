@@ -20,7 +20,7 @@ const MOCK_PRODUCT_NAMES: Record<string, string> = {
 type Props = { params: Promise<{id: string}>};
 
 // 메타 데이터 처리
-export async function generateMetaData({params}:Props): Promise<Metadata> {
+export async function generateMetadata({params}:Props): Promise<Metadata> {
     const { id } = await params;
     const name = MOCK_PRODUCT_NAMES[id];
     if (!name) return {title: '상품을 찾을 수 없습니다.'};

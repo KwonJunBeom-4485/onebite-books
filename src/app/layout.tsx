@@ -5,6 +5,7 @@ import ThemeProvider from "@/components/theme-provider";
 import { Suspense } from "react";
 import UserGreeting from "@/components/user-greeting";
 import Link from "next/link";
+import HydrationGuard from "@/components/hydration-guard";
 
 // 폰트 최적화 
 // next/font/google: 빌드 타임에 폰트 파일을 가져와 /public 저장
@@ -40,9 +41,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="kr" className={notoSansKr.variable} >
-        <body
-            className={`${notoSansKr.variable} antialiased`}
-        >
+      {/* suppressHydrationWarning 속성 지정 (공식 권장) - 방법1
+          확장 프로그램이 body 속성을 주입해도 경고 발생하지 않음
+      */}
+      <body
+          className={`${notoSansKr.variable} antialiased`}
+          suppressHydrationWarning
+      >
+            {/* 
+              방법2 : HydrationGuard (여러 속성 적극 제거)
+            */}
+            <HydrationGuard />
+
             {/* ThemeProvider가 children을 감싸면, children으로 전달된
             페이지들은 Server Component로 유지됨.*/}
             <ThemeProvider>

@@ -31,6 +31,8 @@ const nextConfig: NextConfig = {
     ],
   },
 
+  cacheComponents: true,
+
   // PPR 활성화 설정 추가
   experimental: {
     // 'incremental' : 접체 앱이 아닌 특정 라우트에서만 선택적으로 PPR 사용.
@@ -39,9 +41,10 @@ const nextConfig: NextConfig = {
     // ppr: true 이면 앱 전체 적용. 모든 Suspense는 동적 구멍(dynamic hole)로 처리 됨.
     // ppr: 'incremental',
     // cacheComponents: true,
-  }
 
-
+    // taintObjectReference, taintUniqueValue 사용에 필요
+    taint: true,
+  },
 };
 
 export default nextConfig;

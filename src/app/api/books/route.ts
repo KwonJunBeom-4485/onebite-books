@@ -2,7 +2,6 @@
 
 import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server"
-import { title } from "process";
 
 // [API 엔드 포인트 설계]
 //  메서드      URL                    역할              응답코드

@@ -1,7 +1,6 @@
 import SearchResults from "@/components/search-results";
 import { SearchSkeleton } from "@/components/skeleton/search-skeleton";
 import { Metadata } from "next";
-import Link from "next/link";
 import { Suspense } from "react";
 
 // const MOCK_ALL_BOOKS = [
